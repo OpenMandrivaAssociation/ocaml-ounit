@@ -1,6 +1,6 @@
 %define name	ocaml-ounit
 %define version	1.0.3
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -11,7 +11,7 @@ License:    MIT
 URL:        http://www.xs4all.nl/~mmzeeman/ocaml/
 Source0:    http://www.xs4all.nl/~mmzeeman/ocaml/ounit-%{version}.tar.gz
 BuildRequires:  ocaml >= 3.10.0
-BuildRequires:  findlib
+BuildRequires:  ocaml-findlib
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -43,9 +43,8 @@ make test
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}%{ocaml_sitelib}
-install -d -m 755 %{buildroot}%{ocaml_sitelib}/stublibs
-make install DESTDIR=%{buildroot} OCAMLFIND_DESTDIR=%{buildroot}%{ocaml_sitelib}
+install -d -m 755 %{buildroot}%{_libdir}/ocaml/stublibs
+make install DESTDIR=%{buildroot} OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocaml
 
 %clean
 rm -rf %{buildroot}
@@ -53,12 +52,15 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc LICENCE
-%dir %{ocaml_sitelib}/oUnit
-%{ocaml_sitelib}/oUnit/*.cmi
+%dir %{_libdir}/ocaml/oUnit
+%{_libdir}/ocaml/oUnit/*.cmi
+%{_libdir}/ocaml/oUnit/*.cma
+%{_libdir}/ocaml/oUnit/META
 
 %files devel
 %defattr(-,root,root)
 %doc LICENCE README doc
-%dir %{ocaml_sitelib}/oUnit/*
-%exclude %{ocaml_sitelib}/oUnit/*.cmi
+%{_libdir}/ocaml/oUnit/*.a
+%{_libdir}/ocaml/oUnit/*.cmxa
+%{_libdir}/ocaml/oUnit/*.mli
 
