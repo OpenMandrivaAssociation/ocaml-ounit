@@ -1,6 +1,6 @@
 %define name	ocaml-ounit
 %define version	1.0.3
-%define release	%mkrel 3
+%define release	%mkrel 4
 
 Name:		%{name}
 Version:	%{version}
