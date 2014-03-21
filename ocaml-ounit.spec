@@ -13,6 +13,7 @@ Source1:	http://download.ocamlcore.org/ounit/ounit/%{version}/ounit-doc-%{versio
 BuildRequires:	camlp4
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
+BuildRequires:	libxml2-utils
 
 %description
 OUnit is a unit test framework for OCaml. It allows one to easily
