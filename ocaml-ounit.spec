@@ -4,7 +4,7 @@
 Summary:	Unit test framework for OCaml
 Name:		ocaml-ounit
 Version:	2.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Other
 Url:		http://ounit.forge.ocamlcore.org/
