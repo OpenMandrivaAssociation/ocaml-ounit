@@ -7,7 +7,7 @@ Version:	2.0.0
 Release:	2
 License:	MIT
 Group:		Development/Other
-Url:		http://ounit.forge.ocamlcore.org/
+Url:		https://ounit.forge.ocamlcore.org/
 Source0:	http://download.ocamlcore.org/ounit/ounit/%{version}/ounit-%{version}.tar.gz
 Source1:	http://download.ocamlcore.org/ounit/ounit/%{version}/ounit-doc-%{version}.tar.gz
 BuildRequires:	camlp4
